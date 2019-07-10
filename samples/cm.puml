@@ -1,0 +1,36 @@
+@startuml
+
+!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/sprites
+!includeurl SC_SPRITESPATH/common.puml
+!includeurl SC_SPRITESPATH/scWeb.puml
+!includeurl SC_SPRITESPATH/scClient.puml
+!includeurl SC_SPRITESPATH/scCloudService.puml
+!includeurl SC_SPRITESPATH/scDatabase.puml
+!includeurl SC_SPRITESPATH/scSearchIndex.puml
+!includeurl SC_SPRITESPATH/scVisitors.puml
+!includeurl SC_SPRITESPATH/scWeb.puml
+
+together {
+    SCDATABASE(core_db, "Core\ndatabase")
+    SCDATABASE(web_db, "Web\ndatabase")
+    SCDATABASE(core_db, "Master\ndatabase")
+    SCDATABASE(forms_db, "Forms\ndatabase")
+    SCDATABASE(private_db, "Private Session\nState Store")
+    SCDATABASE(shared_db, "Shared Session\nState Store")
+}
+together {
+    SCWEB(cm, "Content\nManagement")
+    SCWEB(cd, "Content\nDelivery")
+    SCWEB(cd, "Content\nPublishing")
+    SCCLIENT(DEF, "Data Exchange\nFramework\nRemote Client")
+}
+together {
+    SCSEARCHINDEX(master_index, "Master Index")
+    SCSEARCHINDEX(web_index, "Web Index")
+    SCSEARCHINDEX(core_index, "Core Index")
+}
+together {
+    SCCLOUDSERVICE(geoip, "IP Geolocation")
+    SCCLOUDSERVICE(devicedb, "Device Detection")
+}
+@enduml
