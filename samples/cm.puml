@@ -9,8 +9,7 @@
 !includeurl SC_SPRITESPATH/scSearchIndex.puml
 !includeurl SC_SPRITESPATH/scVisitors.puml
 !includeurl SC_SPRITESPATH/scWeb.puml
-
-!include ../sprites/scLogo.puml
+!includeurl SC_SPRITESPATH/scLogo.puml
 
 skinparam title {
     FontSize 36
