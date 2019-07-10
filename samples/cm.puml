@@ -10,6 +10,14 @@
 !includeurl SC_SPRITESPATH/scVisitors.puml
 !includeurl SC_SPRITESPATH/scWeb.puml
 
+!include ../sprites/scLogo.puml
+
+skinparam title {
+    FontSize 36
+}
+
+title <color:red><$scLogo></color> Sitecore\nContent Management Platform
+
 together {
     SCDATABASE(core_db, "Core\ndatabase")
     SCDATABASE(web_db, "Web\ndatabase")
