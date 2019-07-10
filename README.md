@@ -13,3 +13,5 @@ Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-ico
 
 SCWEB(cm, "Content\nManagement")
 ```
+Will give you
+![small](https://www.plantuml.com/plantuml/png/0/TOx12e9054NtWlzWhWhIsRUgHAX582cu2M8SNpenyvHvR-Ztcx1LqEvoEPnxzyJIiRScZbOzF3H2KXVtkhgUcxAk3iqf6PbdsWdXv2iVD8--ymHEJSY0dAl9YcSdZG4n6uaVKqQQGKqECXqe4bOIWnCqkz1JsD6eZE_1E_Ep9OBDJfZFov__7AaMkYyMHtNHbiUrijiaBPPRDxn8b0FOaDDD7Eq1-m2_0G00 "small")

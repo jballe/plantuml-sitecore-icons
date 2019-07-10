@@ -1,0 +1,7 @@
+@startuml
+!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/sprites
+!includeurl SC_SPRITESPATH/common.puml
+!includeurl SC_SPRITESPATH/scWeb.puml
+
+SCWEB(cm, "Content\nManagement")
+@enduml
