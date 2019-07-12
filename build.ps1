@@ -6,6 +6,8 @@ param(
     [string]$SpriteColor = "#00484E"
 )
 
+$ErrorActionPreference = "STOP"
+
 If(-not (Test-Path $TargetFolder)) {
     New-Item $TargetFolder -ItemType Directory | Out-Null
 }
@@ -23,3 +25,13 @@ Get-ChildItem $ImagesFolder -Recurse -Filter "*.png" | ForEach-Object {
     $content = "${sprite}`n`n${puml_short}`n`n${puml_long}"
     Set-Content -Path (Join-Path $TargetFolder "${name}.puml") -Value $content
 }
+
+$allContent = Get-Content (Join-Path $TargetFolder "common.puml") -Raw
+Get-ChildItem $TargetFolder -Filter *.puml | ForEach-Object {
+    $name = $_.BaseName
+    if($name -ne "common" -and $name -ne "all") {
+        $content = Get-Content $_.FullName -Raw
+        $allContent += "`n`n'${name}.puml`n${content}"
+    }
+}
+Set-Content -Path (Join-Path $TargetFolder "all.puml") -Value $allContent
