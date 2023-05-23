@@ -1,0 +1,13 @@
+@startuml
+
+sprite $xp [160x130/4z] {
+xTfPZW9130HHf_B-TvxVsJ6oerqbEGu0Jrdij0VRjctRjar_vqpnJf8QVMho_LIYm9y-mCZvyka9O0GkdFD5Y1umgi70A2VqXACXSi0u71ZF08TzWGqO0y09
+do1WT2NcX2C6JdZ49mGOVQ6--G7dVUxqwSSjnwiC0DyQGy86L8VFTirdt6T11wmcdrNncVUP-ZRIvLF2Lm2MVTQjld0DsEHppUThVS9z7S1vdw_r2VQLWVJh
+NnrOzyNPFYLy1I3u-S3k01PzEioNvyazGFRpVRv-d-A_x7vW_ixq0uVvbF3fQ_4w6HWm-dAVJu1FhW1vdqq0P-UpqVtu-NmupwEdgwTyekRpuJm3FDWtp-lr
+kS3ZVRB9-JobiyJxZFDSsWxm0TStaVEvXEDvXcIyBo41U7dV6JmFpATRVJx2frjz1dm0RzOdoCVprWVmrfVa0Jw0jxu2RzYdQtq6V01lrAThVJx19yh7yzO7
+y00Vm5jVWZVjqxq-ipwUn_jqhyy7-8JvUDxwCDwypu1lgctRjctRjkq3
+}
+
+!include colors.puml
+
+@enduml

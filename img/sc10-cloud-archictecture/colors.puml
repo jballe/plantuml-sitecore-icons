@@ -1,0 +1,24 @@
+@startuml
+
+!define SitecoreRed #EB1F1F
+!define SitecoreDarkRed #AB0000
+
+!define SitecoreViolet #5548D9
+!define SitecoreDarkViolet #333378
+
+!define SitecoreTeal #02999A
+!define SitecoreDarkTeal #005E6E
+
+!define SitecoreCharcoal #545859
+!define SitecoreDarkCharcoal #212621
+
+!define SitecoreBurntOrange #EB7304
+!define SitecoreOrange #EB7304
+!define SitecoreYellow #FFE007
+
+!define SitecoreLightGray #C8C8C8
+!define SitecoreMidGray #969696
+
+
+
+@enduml
