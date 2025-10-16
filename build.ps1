@@ -1,37 +1,98 @@
 param(
-    [string]$PlantUmlJar = "C:\ProgramData\chocolatey\lib\plantuml\tools\plantuml.jar",
-    [string]$ImagesFolder = (Join-Path $PSScriptRoot "img"),
-    [string]$TargetFolder = (Join-Path $PSScriptRoot "sprites"),
     [string]$Java = "${env:JAVA_HOME}\bin\java.exe",
-    [string]$SpriteColor = "#00484E"
+    [string]$PlantUmlJar = "C:\ProgramData\chocolatey\lib\plantuml\tools\plantuml.jar",
+    [string]$Inkscape = "C:\Program Files\Inkscape\bin\inkscape.exe",
+    [string]$SourcesFiles = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
+    [string]$PngImagesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
+    [string]$SpritesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
+    [string]$SpriteColor = "#EB001A",
+    [string]$ThemeName = "Sitecore Cloud",
+    [string]$ThemeDescription = "Icons for Sitecore related services",
+    [Switch]$SkipFetchImages,
+    [Switch]$SkipStructurizrTheme,
+    [Switch]$SkipSprites,
+    [switch]$SkipAllPuml
 )
 
 $ErrorActionPreference = "STOP"
 
-If(-not (Test-Path $TargetFolder)) {
-    New-Item $TargetFolder -ItemType Directory | Out-Null
-}
+if (-not $SkipFetchImages) {
+    $data = Get-Content (join-path $SourcesFiles "icons.json" -Resolve) | ConvertFrom-Json
+    foreach ($key in $data.icons.PSObject.Properties.Name) {
+        Write-Host "Fetching $key"
+        $cfg = $data.icons.$key
+        $extension = $cfg.type ?? $data.defaults.type
+        $outPath = Join-Path $SourcesFiles "${key}.${extension}"
+        Invoke-WebRequest -UseBasicParsing -Uri $cfg.src -OutFile $outPath
 
-Get-ChildItem $ImagesFolder -Recurse -Filter "*.png" | ForEach-Object {
-    $path = $_.FullName
-    $sprite = (& $Java -jar $PlantUmlJar -encodesprite 8 $path) -join "`n"
+        if ($extension -eq "svg") {
+            $outPngPath = Join-Path $SourcesFiles "${key}.png"
+            $out64Png = Join-Path $SourcesFiles "${key}_64.png"
 
-    $spritename = $_.BaseName
-    $name = $_.BaseName
-    $entity = $name.ToUpperInvariant()
-    
-    $puml_short = "!define ${entity}(alias) PUML_ENTITY(component,${SpriteColor},${name},alias,${spritename})"
-    $puml_long  = "!definelong ${entity}(alias,label,e_type=`"component`",e_color=`"${SpriteColor}`",e_stereo=`"Sitecore`",e_sprite=`"${spritename}`")`nPUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)`n!enddefinelong"
-    $content = "${sprite}`n`n${puml_short}`n`n${puml_long}"
-    Set-Content -Path (Join-Path $TargetFolder "${name}.puml") -Value $content
-}
-
-$allContent = Get-Content (Join-Path $TargetFolder "common.puml") -Raw
-Get-ChildItem $TargetFolder -Filter *.puml | ForEach-Object {
-    $name = $_.BaseName
-    if($name -ne "common" -and $name -ne "all") {
-        $content = Get-Content $_.FullName -Raw
-        $allContent += "`n`n'${name}.puml`n${content}"
+            Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outPngPath`" --export-height=200 --export-overwrite $outPath"
+            Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$out64Png`" --export-height=64 --export-overwrite $outPath"
+        }
     }
 }
-Set-Content -Path (Join-Path $TargetFolder "all.puml") -Value $allContent
+
+if(-not $SkipStructurizrTheme) {
+    $data = Get-Content (join-path $SourcesFiles "icons.json" -Resolve) | ConvertFrom-Json
+    $elements = @()
+    foreach ($key in $data.icons.PSObject.Properties.Name) {
+        $cfg = $data.icons.$key
+        $extension = $cfg.type ?? $data.defaults.type
+
+        $elements += @{
+            tag = $cfg.tag ?? $key
+            icon = "${key}.${extension}"
+        }
+    }
+
+    @{
+        name = $ThemeName
+        description = $ThemeDescription
+        elements = $elements
+    } | ConvertTo-Json -Depth 10 | Set-Content (Join-Path $SourcesFiles "structurizr-theme.json")
+}
+
+if(-not $SkipSprites -and -not (Test-Path $PlantUmlJar -PathType Leaf)) {
+    Write-Warning "Skip sprites as PlantUML was not found"
+    $SkipSprites = $true
+}
+if (-not $SkipSprites) {
+    Write-Host "Creating sprites for PlantUML"
+    If (-not (Test-Path $SpritesFolder)) {
+        New-Item $SpritesFolder -ItemType Directory | Out-Null
+    }
+    
+    $items = Get-ChildItem $PngImagesFolder -Recurse -Filter "*_64.png"
+    foreach($itm in $items) {
+        $imgPath = $itm.FullName
+        $sprite = ((& $Java -jar $PlantUmlJar -encodesprite 16 $imgPath) -join "`n").Replace("_64 [", " [")
+        $name = $itm.BaseName.Replace("_64", "")
+        $sprite = $sprite.Replace("`$content", "`$${($name.ToLower())}")
+
+        $spritename = $name
+        $entity = "SITECORE_" + $name.ToUpperInvariant().Replace(" ", "_")
+        $puml_short = "!define ${entity}(alias) PUML_ENTITY(component,${SpriteColor},${name},alias,${spritename})"
+        $puml_long = "!definelong ${entity}(alias,label,e_type=`"component`",e_color=`"${SpriteColor}`",e_stereo=`"Sitecore`",e_sprite=`"${spritename}`")`nPUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)`n!enddefinelong"
+        $content = "${sprite}`n`n${puml_short}`n`n${puml_long}"
+        Set-Content -Path (Join-Path $SpritesFolder "${name}.puml") -Value $content
+    }
+}
+
+If (-not $SkipAllPuml) {
+    $allContent = ""
+    if(Test-Path (Join-Path $SpritesFolder "common.puml")) {
+        $allContent = Get-Content (Join-Path $SpritesFolder "common.puml") -Raw
+    }
+
+    Get-ChildItem $SpritesFolder -Filter *.puml | ForEach-Object {
+        $name = $_.BaseName
+        if ($name -ne "common" -and $name -ne "all") {
+            $content = Get-Content $_.FullName -Raw
+            $allContent += "`n`n'${name}.puml`n${content}"
+        }
+    }
+    Set-Content -Path (Join-Path $SpritesFolder "all.puml") -Value $allContent
+}
