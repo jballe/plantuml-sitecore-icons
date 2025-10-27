@@ -1,4 +1,4 @@
-sprite $ [64x64/16] {
+sprite $hubone [64x64/16] {
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -66,8 +66,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 }
 
 
-!define SITECORE_CONTENT-HUB-ONE(alias) PUML_ENTITY(component,#EB001A,content-hub-one,alias,content-hub-one)
+!define SITECORE_CONTENTHUBONE(alias) PUML_ENTITY(component,SITECORE_COLOR,contenthubone,alias,contenthubone)
 
-!definelong SITECORE_CONTENT-HUB-ONE(alias,label,e_type="component",e_color="#EB001A",e_stereo="Sitecore",e_sprite="content-hub-one")
+!definelong SITECORE_CONTENTHUBONE(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="contenthubone")
 PUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
 !enddefinelong

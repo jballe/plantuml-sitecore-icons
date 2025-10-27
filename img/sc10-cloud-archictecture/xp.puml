@@ -66,8 +66,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 }
 
 
-!define SITECORE_XP(alias) PUML_ENTITY(component,#EB001A,xp,alias,xp)
+!define SITECORE_XP(alias) PUML_ENTITY(component,SITECORE_COLOR,xp,alias,xp)
 
-!definelong SITECORE_XP(alias,label,e_type="component",e_color="#EB001A",e_stereo="Sitecore",e_sprite="xp")
+!definelong SITECORE_XP(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="xp")
 PUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
 !enddefinelong

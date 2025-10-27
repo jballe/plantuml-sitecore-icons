@@ -1,4 +1,4 @@
-sprite $xm [64x64/16] {
+sprite $xmcloud [64x64/16] {
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -66,8 +66,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 }
 
 
-!define SITECORE_XM-CLOUD(alias) PUML_ENTITY(component,#EB001A,xm-cloud,alias,xm-cloud)
+!define SITECORE_XMCLOUD(alias) PUML_ENTITY(component,SITECORE_COLOR,xmcloud,alias,xmcloud)
 
-!definelong SITECORE_XM-CLOUD(alias,label,e_type="component",e_color="#EB001A",e_stereo="Sitecore",e_sprite="xm-cloud")
+!definelong SITECORE_XMCLOUD(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="xmcloud")
 PUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
 !enddefinelong

@@ -1,0 +1,120 @@
+@startuml c2-containers
+title C2: Containers for solution
+hide stereotype
+'skinparam linetype polyline
+'left to right direction
+
+!define XMCLOUD_DETAILS 0
+!includesub xmcloud-architecture.puml!includes
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+SHOW_PERSON_PORTRAIT()
+
+!define TUPADR https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/refs/tags/v3.0.0/icons
+!define FONTAWESOME TUPADR/font-awesome-5
+!include FONTAWESOME/users.puml
+
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/refs/tags/v2.2/dist
+!include AzurePuml/AzureCommon.puml
+'!includeurl AzurePuml/AzureC4Integration.puml
+!include AzurePuml/Networking/AzureFrontDoorService.puml
+!include AzurePuml/General/Azure.puml
+!include AzurePuml/Identity/AzureActiveDirectory.puml
+!include AzurePuml/Identity/AzureActiveDirectoryB2C.puml
+!include AzurePuml/Web/AzureAPIManagement.puml
+!include AzurePuml/Containers/AzureContainerInstance.puml
+!include AzurePuml/Compute/AzureAppService.puml
+
+!include TUPADR/font-awesome/database.puml
+
+!define KubernetesLogo <img:https://raw.githubusercontent.com/octo-technology/kubernetes-icons/master/png/k8s_resources/unlabeled/cronjob.png{scale=.3}>
+!define SitecoreSearchLogo <img:https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/img/sc10-cloud-archictecture/search_64.png>
+
+!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.1/sprites
+!includeurl SPRITESURL/github.puml
+!includeurl SPRITESURL/github-icon.puml
+!includeurl SPRITESURL/git.puml
+!includeurl SPRITESURL/git-icon.puml
+!include <office/Servers/web_server>
+
+
+AzureEntityColoring(SaasService)
+!define SaasService(e_alias, e_label, e_techn) AzureEntity(e_alias, e_label, e_techn, AZURE_SYMBOL_COLOR, AzureAppService, SaasService)
+
+skinparam rectangle<<location>> {
+    StereotypeFontSize 0
+    BorderStyle dashed
+    Shadowing false
+}
+skinparam actor {
+    BorderColor black
+    BackgroundColor white
+    Shadowing false
+}
+
+Person(visitor, "Visitor")
+
+cloud "Microsoft Azure, Subscription 1" as microsoft <<location>> {
+    AzureActiveDirectory(ad, "Internal Users", "Azure Active Directory")
+    AzureActiveDirectoryB2C(b2c, "External Users", "Azure Active Directory B2C")
+
+    AzureAPIManagement(apimgm, "API Gateway", "Azure API Management")
+    CustomEntity(pim, "PIM", "PIM", <$database>)
+
+    apimgm --> pim
+
+    AzureContainerInstance(idm, "Internal Advanced API", "API")
+    apimgm --> idm
+}
+
+cloud "SitecoreLogo\nSitecore SaaS Solutions" as sitecore <<location>> {
+    CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
+
+    !if XMCLOUD_DETAILS == "1"
+    !includesub xmcloud-architecture.puml!XM_CLOUD
+    !else
+    CustomEntity(xmcloud, "XM Cloud", "Sitecore XM Cloud", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(www, "my-website.com", "Vercel website", black, "<size:60><U+25B2>", VercelCloud)
+    !endif
+    CustomEntity(portal, "portal.my-website.com", "Vercel website", black, "<size:60><U+25B2>", VercelCloud)
+}
+
+Rel_U(search, www, "Crawl content")
+Rel_D(www, xmcloud, "Fetch content")
+Rel_D(www, apimgm, "Fetch product data")
+Rel(portal, b2c, "User Authentication")
+Rel(portal, xmcloud, "Fetch content")
+Rel(portal, apimgm, "APIs eg. user management")
+
+Rel_D(visitor, www, "Visit website")
+Rel_D(visitor, b2c, "Single-Sign-On")
+
+Person(editor, "Content Editor")
+!if XMCLOUD_DETAILS == "1"
+Rel_D(editor, ad, "SSO", "https")
+Rel_D(editor, sitecoreportal, "sitecorecloud.io", "https")
+Rel_D(editor, xmcloud_pages, "sitecorecloud.io", "https")
+Rel_D(editor, xmcloud_explorer, "sitecorecloud.io", "https")
+!else
+Rel_D(editor, ad, "SSO", "https")
+Rel_D(editor, xmcloud, "sitecorecloud.io", "https")
+!endif
+
+
+!if XMCLOUD_DETAILS == "1"
+
+rectangle "<$github>" as GitHubCloud<<location>> {
+    database "<$git>" as repo<<CustomEntity>>
+}
+
+Person(developer, "Developer")
+Rel_U(developer, repo, "Push code")
+Rel_U(repo, vercel_githubapp, "Commit Webhook")
+Rel_U(repo, xmcloud_githubapp, "Commit Webhook")
+
+www -[hidden]- sitecoreportal
+!endif
+
+
+
+@enduml

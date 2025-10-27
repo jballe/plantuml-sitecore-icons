@@ -5,7 +5,7 @@ param(
     [string]$SourcesFiles = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
     [string]$PngImagesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
     [string]$SpritesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
-    [string]$SpriteColor = "#EB001A",
+    [string]$SpriteColor = "SITECORE_COLOR",
     [string]$ThemeName = "Sitecore Cloud",
     [string]$ThemeDescription = "Icons for Sitecore related services",
     [Switch]$SkipFetchImages,

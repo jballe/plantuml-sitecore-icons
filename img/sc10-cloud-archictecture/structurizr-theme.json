@@ -1,66 +1,66 @@
 {
+  "description": "Icons for Sitecore related services",
+  "name": "Sitecore Cloud",
   "elements": [
     {
-      "tag": "Sitecore CDP",
-      "icon": "cdp.svg"
+      "icon": "cdp.svg",
+      "tag": "Sitecore CDP"
     },
     {
-      "tag": "Sitecore Content Hub",
-      "icon": "content-hub.svg"
+      "icon": "contenthub.svg",
+      "tag": "Sitecore Content Hub"
     },
     {
-      "tag": "Sitecore Content Hub ONE",
-      "icon": "content-hub-one.svg"
+      "icon": "contenthubone.svg",
+      "tag": "Sitecore Content Hub ONE"
     },
     {
-      "tag": "Sitecore Search",
-      "icon": "search.svg"
+      "icon": "search.svg",
+      "tag": "Sitecore Search"
     },
     {
-      "tag": "Sitecore Personalize",
-      "icon": "personalize.svg"
+      "icon": "personalize.svg",
+      "tag": "Sitecore Personalize"
     },
     {
-      "tag": "Sitecore Send",
-      "icon": "send.svg"
+      "icon": "send.svg",
+      "tag": "Sitecore Send"
     },
     {
-      "tag": "Sitecore XM Cloud",
-      "icon": "xm-cloud.svg"
+      "icon": "xmcloud.svg",
+      "tag": "Sitecore XM Cloud"
     },
     {
-      "tag": "Sitecore XM",
-      "icon": "xm.svg"
+      "icon": "xm.svg",
+      "tag": "Sitecore XM"
     },
     {
-      "tag": "Sitecore XP",
-      "icon": "xp.svg"
+      "icon": "xp.svg",
+      "tag": "Sitecore XP"
     },
     {
-      "tag": "Sitecore Connect",
-      "icon": "connect.svg"
+      "icon": "connect.svg",
+      "tag": "Sitecore Connect"
     },
     {
-      "tag": "Sitecore Stream",
-      "icon": "stream.svg"
+      "icon": "stream.svg",
+      "tag": "Sitecore Stream"
     },
     {
-      "tag": "Sitecore Discover",
-      "icon": "discover.svg"
+      "icon": "discover.svg",
+      "tag": "Sitecore Discover"
     },
     {
-      "tag": "Sitecore OrderCloud",
-      "icon": "ordercloud.svg"
+      "icon": "ordercloud.svg",
+      "tag": "Sitecore OrderCloud"
     },
     {
-      "tag": "Sitecore XC",
-      "icon": "xc.svg"
+      "icon": "xc.svg",
+      "tag": "Sitecore XC"
     },
     {
-      "tag": "Sitecore",
-      "icon": "sitecore.svg"
+      "icon": "sitecore.svg",
+      "tag": "Sitecore"
     }
-  ],
-  "description": "Icons for Sitecore related services",
-  "name": "Sitecore Cloud"
+  ]
 }

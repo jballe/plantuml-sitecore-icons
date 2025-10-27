@@ -7,11 +7,11 @@
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-cdp-dark",
             "tag": "Sitecore CDP"
         },
-        "content-hub": {
+        "contenthub": {
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark",
             "tag": "Sitecore Content Hub"
         },
-        "content-hub-one": {
+        "contenthubone": {
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub_one-dark",
             "tag": "Sitecore Content Hub ONE"
         },
@@ -27,7 +27,7 @@
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-send-dark",
             "tag": "Sitecore Send"
         },
-        "xm-cloud": {
+        "xmcloud": {
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark",
             "tag": "Sitecore XM Cloud"
         },
