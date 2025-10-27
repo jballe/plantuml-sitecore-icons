@@ -66,8 +66,8 @@ AAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBAAAAAAAAAAAAAAAAAAAAAAAA
 }
 
 
-!define SITECORE_SITECORE(alias) PUML_ENTITY(component,SITECORE_COLOR,sitecore,alias,sitecore)
+!define SITECORE_64(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_64,alias,sitecore_64)
 
-!definelong SITECORE_SITECORE(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore")
-PUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
+!definelong SITECORE_64(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_64")
+SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
 !enddefinelong

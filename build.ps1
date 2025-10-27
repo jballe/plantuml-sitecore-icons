@@ -31,6 +31,9 @@ if (-not $SkipFetchImages) {
 
             Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outPngPath`" --export-height=200 --export-overwrite $outPath"
             Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$out64Png`" --export-height=64 --export-overwrite $outPath"
+
+            $outSprite = Join-Path $SourcesFiles "sitecore_${key}.png"
+            Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outSprite`" --export-height=64 --export-background=white --export-overwrite $outPath"
         }
     }
 }
@@ -60,24 +63,31 @@ if(-not $SkipSprites -and -not (Test-Path $PlantUmlJar -PathType Leaf)) {
     $SkipSprites = $true
 }
 if (-not $SkipSprites) {
+
+    if(-not $SkipFetchImages) {
+        Write-Host "Wait a moment for disk updates..."
+        Start-Sleep -Seconds 2
+    }
+
     Write-Host "Creating sprites for PlantUML"
     If (-not (Test-Path $SpritesFolder)) {
         New-Item $SpritesFolder -ItemType Directory | Out-Null
     }
     
-    $items = Get-ChildItem $PngImagesFolder -Recurse -Filter "*_64.png"
+    $items = Get-ChildItem $PngImagesFolder -Recurse -Filter "sitecore_*.png"
     foreach($itm in $items) {
         $imgPath = $itm.FullName
         $sprite = ((& $Java -jar $PlantUmlJar -encodesprite 16 $imgPath) -join "`n").Replace("_64 [", " [")
-        $name = $itm.BaseName.Replace("_64", "")
-        $sprite = $sprite.Replace("`$content", "`$${($name.ToLower())}")
 
+        $name = $itm.BaseName
         $spritename = $name
-        $entity = "SITECORE_" + $name.ToUpperInvariant().Replace(" ", "_")
-        $puml_short = "!define ${entity}(alias) PUML_ENTITY(component,${SpriteColor},${name},alias,${spritename})"
-        $puml_long = "!definelong ${entity}(alias,label,e_type=`"component`",e_color=`"${SpriteColor}`",e_stereo=`"Sitecore`",e_sprite=`"${spritename}`")`nPUML_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)`n!enddefinelong"
+        $entity = $name.ToUpperInvariant().Replace(" ", "_")
+        $puml_short = "!define ${entity}(alias) SC_ENTITY(component,${SpriteColor},${name},alias,${spritename})"
+        $puml_long = "!definelong ${entity}(alias,label,e_type=`"component`",e_color=`"${SpriteColor}`",e_stereo=`"Sitecore`",e_sprite=`"${spritename}`")`nSC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)`n!enddefinelong"
         $content = "${sprite}`n`n${puml_short}`n`n${puml_long}"
-        Set-Content -Path (Join-Path $SpritesFolder "${name}.puml") -Value $content
+        Set-Content -Path (Join-Path $SpritesFolder ("{0}.puml" -f $name.Replace("sitecore_", ""))) -Value $content
+
+        Remove-item $itm.FullName
     }
 }
 

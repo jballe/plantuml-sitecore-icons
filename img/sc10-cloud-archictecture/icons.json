@@ -59,7 +59,7 @@
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xc-dark",
             "tag": "Sitecore XC"
         },
-        "sitecore": {
+        "logo": {
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-sitecore",
             "tag": "Sitecore"
         }
