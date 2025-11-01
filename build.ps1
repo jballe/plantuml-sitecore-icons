@@ -31,9 +31,6 @@ if (-not $SkipFetchImages) {
 
             Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outPngPath`" --export-height=200 --export-overwrite $outPath"
             Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$out64Png`" --export-height=64 --export-overwrite $outPath"
-
-            $outSprite = Join-Path $SourcesFiles "sitecore_${key}.png"
-            Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outSprite`" --export-height=64 --export-background=white --export-overwrite $outPath"
         }
     }
 }
@@ -69,6 +66,16 @@ if (-not $SkipSprites) {
         Start-Sleep -Seconds 2
     }
 
+    Write-Host "Generate pngs for sprites"
+    $svgs = Get-ChildItem -Path $SourcesFiles -Filter *.svg
+    foreach($svg in $svgs) {
+        $key = $svg.BaseName
+        $svgPath = $svg.FullName
+        $outSprite = Join-Path $SourcesFiles "sitecore_${key}.png"
+        Invoke-Expression "& `"$Inkscape`" --export-type=`"png`" --export-area-page --export-filename=`"$outSprite`" --export-height=64 --export-background=white --export-overwrite $svgPath"
+    }    
+    Start-Sleep -Seconds 2
+
     Write-Host "Creating sprites for PlantUML"
     If (-not (Test-Path $SpritesFolder)) {
         New-Item $SpritesFolder -ItemType Directory | Out-Null
@@ -82,9 +89,11 @@ if (-not $SkipSprites) {
         $name = $itm.BaseName
         $spritename = $name
         $entity = $name.ToUpperInvariant().Replace(" ", "_")
-        $puml_short = "!define ${entity}(alias) SC_ENTITY(component,${SpriteColor},${name},alias,${spritename})"
-        $puml_long = "!definelong ${entity}(alias,label,e_type=`"component`",e_color=`"${SpriteColor}`",e_stereo=`"Sitecore`",e_sprite=`"${spritename}`")`nSC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)`n!enddefinelong"
-        $content = "${sprite}`n`n${puml_short}`n`n${puml_long}"
+        
+        $stereoType = "Sitecore"
+        $puml_short = "!define ${entity}(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, ${spritename}, ${stereoType})"
+        $puml_long = "!define ${entity}(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, ${spritename}, ${stereoType})"
+        $content = "${sprite}`n`n${puml_short}`n${puml_long}`n"
         Set-Content -Path (Join-Path $SpritesFolder ("{0}.puml" -f $name.Replace("sitecore_", ""))) -Value $content
 
         Remove-item $itm.FullName
