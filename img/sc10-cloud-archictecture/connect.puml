@@ -66,8 +66,6 @@ sprite $sitecore_connect [64x64/16] {
 }
 
 
-!define SITECORE_CONNECT(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_connect,alias,sitecore_connect)
+!define SITECORE_CONNECT(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
+!define SITECORE_CONNECT(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
 
-!definelong SITECORE_CONNECT(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_connect")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong

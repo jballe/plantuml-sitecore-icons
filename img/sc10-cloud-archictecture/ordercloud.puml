@@ -66,8 +66,6 @@ sprite $sitecore_ordercloud [64x64/16] {
 }
 
 
-!define SITECORE_ORDERCLOUD(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_ordercloud,alias,sitecore_ordercloud)
+!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
+!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
 
-!definelong SITECORE_ORDERCLOUD(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_ordercloud")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong

@@ -66,8 +66,6 @@ sprite $sitecore_stream [64x64/16] {
 }
 
 
-!define SITECORE_STREAM(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_stream,alias,sitecore_stream)
+!define SITECORE_STREAM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
+!define SITECORE_STREAM(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
 
-!definelong SITECORE_STREAM(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_stream")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong

@@ -66,8 +66,6 @@ sprite $sitecore_discover [64x64/16] {
 }
 
 
-!define SITECORE_DISCOVER(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_discover,alias,sitecore_discover)
+!define SITECORE_DISCOVER(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
+!define SITECORE_DISCOVER(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
 
-!definelong SITECORE_DISCOVER(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_discover")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong

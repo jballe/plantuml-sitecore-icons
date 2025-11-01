@@ -8,8 +8,8 @@ param(
     [string]$SpriteColor = "SITECORE_COLOR",
     [string]$ThemeName = "Sitecore Cloud",
     [string]$ThemeDescription = "Icons for Sitecore related services",
-    [Switch]$SkipFetchImages,
-    [Switch]$SkipStructurizrTheme,
+    [Switch]$SkipFetchImages=$true,
+    [Switch]$SkipStructurizrTheme=$true,
     [Switch]$SkipSprites,
     [switch]$SkipAllPuml
 )

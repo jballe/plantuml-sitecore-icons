@@ -66,8 +66,6 @@ ABBBBBBB900000000000000000000000000000000006B62BBBBBBA09BBBBBBB9
 }
 
 
-!define SITECORE_LOGO(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_logo,alias,sitecore_logo)
+!define SITECORE_LOGO(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
+!define SITECORE_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
 
-!definelong SITECORE_LOGO(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_logo")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong

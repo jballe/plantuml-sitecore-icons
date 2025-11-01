@@ -66,8 +66,6 @@ sprite $sitecore_personalize [64x64/16] {
 }
 
 
-!define SITECORE_PERSONALIZE(alias) SC_ENTITY(component,SITECORE_COLOR,sitecore_personalize,alias,sitecore_personalize)
+!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
+!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
 
-!definelong SITECORE_PERSONALIZE(alias,label,e_type="component",e_color="SITECORE_COLOR",e_stereo="Sitecore",e_sprite="sitecore_personalize")
-SC_ENTITY(e_type,e_color,e_sprite,label,alias,e_stereo)
-!enddefinelong
