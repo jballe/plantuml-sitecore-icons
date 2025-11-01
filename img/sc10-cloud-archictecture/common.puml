@@ -10,7 +10,7 @@ Params:
     e_label:    the label to display under the sprite
     e_alias:    the alias to give the entity
     e_stereo:   the stereotype, which can define additional styling '/
-!definelong AzureEntity(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
+!definelong SC_ENTITY(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
 !enddefinelong
 
