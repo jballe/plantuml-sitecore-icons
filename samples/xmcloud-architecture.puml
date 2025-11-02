@@ -2,7 +2,8 @@
 
 !startsub includes
 
-!include <Azure/AzureCommon>
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
+!include AzurePuml/AzureCommon.puml
 
 AzureEntityColoring(CustomEntity)
 AzureEntityColoring(SitecoreCloud)
@@ -10,38 +11,36 @@ AzureEntityColoring(VercelCloud)
 !define CustomEntity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo) rectangle "==e_label\n<color:e_color>e_sprite</color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
 !define CustomEntity(e_alias, e_label, e_techn, e_sprite) CustomEntity(e_alias, e_label, e_techn, AZURE_SYMBOL_COLOR, e_sprite, CustomEntity)
 
-!define SITECOREBASE https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v0.9/img
-!define SITECOREURL SITECOREBASE/sc10-cloud-archictecture
-!include SITECOREURL/all.puml
-
-!define SitecoreXmCloudLogo <img:SITECOREURL/xm-cloud_64.png>
-!define SitecoreLogo <img:SITECOREURL/sitecore_64.png>
+!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
+!define SitecoreXmCloudLogo <img:SITECOREURL/xmcloud_64.png>
+!define SitecoreLogo <img:SITECOREURL/logo_64.png>
 !define SitecoreSearchLogo <img:SITECOREURL/search_64.png>
 
 !define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.1/sprites
-!includeurl SPRITESURL/vercel.puml
-!includeurl SPRITESURL/graphql.puml
-!includeurl SPRITESURL/nextjs.puml
-!includeurl SPRITESURL/cloudflare.puml
-!includeurl SPRITESURL/github-icon.puml
-!includeurl SPRITESURL/graphql.puml
+!include SPRITESURL/vercel.puml
+!include SPRITESURL/graphql.puml
+!include SPRITESURL/nextjs.puml
+!include SPRITESURL/cloudflare.puml
+!include SPRITESURL/github-icon.puml
+!include SPRITESURL/graphql.puml
+
 
 !endsub
 
 !startsub XM_CLOUD
 
 rectangle "<$vercel>" as vercel {
-together {
-    CustomEntity(www, "Website", "Vercel Edge", black, "<$cloudflare>", VercelCloud)
-    CustomEntity(compute, "Compute\n", "Vercel compute", black, "<$nextjs>", VercelCloud)
-}
-CustomEntity(vercel_build, "Deploy", "Vercel pipeline", black, "<size:60><U+25B2>", VercelCloud)
-rectangle "<$github-icon>\nGitHub app" as vercel_githubapp<<VercelCloud>>
+    together {
+        CustomEntity(www, "Website", "Vercel Edge", black, "<$cloudflare>", VercelCloud)
+        CustomEntity(compute, "Compute\n", "Vercel compute", black, "<$nextjs>", VercelCloud)
+    }
+    CustomEntity(vercel_build, "Deploy", "Vercel pipeline", black, "<size:60><U+25B2>", VercelCloud)
+    rectangle "<$github-icon>\nGitHub app" as vercel_githubapp<<VercelCloud>>
 
-vercel_githubapp -.up-> vercel_build : trigger
-vercel_build -.up-> www : Static site generation
-vercel_build -.up-> compute : Build and deploy app
-www --> compute
+    vercel_githubapp -.up-> vercel_build : trigger
+    vercel_build -.up-> www : Static site generation
+    vercel_build -.up-> compute : Build and deploy app
+    www --> compute
 
 }
 
@@ -50,37 +49,46 @@ search .-.> www : Crawling website
 
 rectangle "SitecoreXmCloudLogo\nXM Cloud" as xmcloudlocation {
 
-CustomEntity(sitecoreportal, "Sitecore Portal", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreLogo, SitecoreCloud)
-CustomEntity(xmcloud_pages, "XM Cloud Pages", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_explorer, "XM Cloud Explorer", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_editor, "XM Cloud Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-' CustomEntity(xmcloud_forms, "XM Cloud Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud, "XM Cloud Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
-CustomEntity(xmcloud_storage, "XM Cloud/CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_pipeline, "XM Cloud Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
-rectangle "<$github-icon>\nGitHub app" as xmcloud_githubapp<<SitecoreCloud>>
+    CustomEntity(sitecoreportal, "Sitecore Portal", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_pages, "XM Cloud Pages", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_explorer, "XM Cloud Explorer", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_editor, "XM Cloud Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_forms, "XM Cloud Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud, "Experience Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
+    CustomEntity(xmcloud_storage, "XM Cloud/CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_pipeline, "XM Cloud Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+    CustomEntity(xmcloud_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
+    rectangle "<$github-icon>\nGitHub app" as xmcloud_githubapp<<SitecoreCloud>>
 
-sitecoreportal -.-> xmcloud_pages
-sitecoreportal -.-> xmcloud_explorer
-sitecoreportal -.-> xmcloud_editor
+    sitecoreportal -.-> xmcloud_pages
+    sitecoreportal -.-> xmcloud_explorer
+    sitecoreportal -.-> xmcloud_editor
+    sitecoreportal -.-> xmcloud_forms
 
-xmcloud_pages -.-> xmcloud_editinghost
-xmcloud_pages --> xmcloud_storage
-xmcloud_explorer --> xmcloud_storage
-xmcloud_editor --> xmcloud_storage
+    xmcloud_pages -.-.-> xmcloud_editinghost
+    xmcloud_pages --> xmcloud_storage
+    xmcloud_explorer --> xmcloud_storage
+    xmcloud_editor --> xmcloud_storage
+    xmcloud_forms --> xmcloud_storage
 
-xmcloud_storage -.-> xmcloud : publish content
-xmcloud_storage -.-> vercel_build : publish trigger
-compute ---> xmcloud : api
+    xmcloud_storage -up.-> xmcloud : publish content
+    compute ---> xmcloud : api
 
-xmcloud_pipeline -up.-> xmcloud_editor : deploy
-xmcloud_pipeline -up.-> xmcloud_editinghost : deploy
+    xmcloud_pipeline -up.-> xmcloud_editor : deploy
+    xmcloud_pipeline -up.-> xmcloud_editinghost : deploy
 
-xmcloud_githubapp -up.-> xmcloud_pipeline : trigger
+    xmcloud_githubapp -up.-> xmcloud_pipeline : trigger
 
 }
 
 !endsub
+
+CustomEntity(app, "App", "Sitecore Marketplace", AZURE_SYMBOL_COLOR, SitecoreLogo, VercelCloud)
+xmcloud_pages -.up-> app
+'sitecoreportal -.-> app
+app -.-> xmcloud_editinghost
+app -.-> xmcloud
+
+
 
 @enduml

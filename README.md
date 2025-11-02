@@ -4,7 +4,17 @@ I like to make my architecture diagrams in [PlantUML](http://plantuml.com/) and 
 
 Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-icon-font-sprites), I copied the icons from Sitecore documentation and made sprites, so they can easily be used in diagrams.
 
-## How to use
+## How to use (Sitecore 10 / XM Cloud)
+
+```
+!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
+!include SITECOREURL/all.puml
+
+SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
+```
+
+
+## How to use (Sitecore 9)
 
 ```
 !define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/sprites
