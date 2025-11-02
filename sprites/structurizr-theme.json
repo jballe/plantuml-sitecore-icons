@@ -1,0 +1,66 @@
+{
+  "description": "Icons for Sitecore related services",
+  "name": "Sitecore Cloud",
+  "elements": [
+    {
+      "icon": "cdp.svg",
+      "tag": "Sitecore CDP"
+    },
+    {
+      "icon": "contenthub.svg",
+      "tag": "Sitecore Content Hub"
+    },
+    {
+      "icon": "contenthubone.svg",
+      "tag": "Sitecore Content Hub ONE"
+    },
+    {
+      "icon": "search.svg",
+      "tag": "Sitecore Search"
+    },
+    {
+      "icon": "personalize.svg",
+      "tag": "Sitecore Personalize"
+    },
+    {
+      "icon": "send.svg",
+      "tag": "Sitecore Send"
+    },
+    {
+      "icon": "xmcloud.svg",
+      "tag": "Sitecore XM Cloud"
+    },
+    {
+      "icon": "xm.svg",
+      "tag": "Sitecore XM"
+    },
+    {
+      "icon": "xp.svg",
+      "tag": "Sitecore XP"
+    },
+    {
+      "icon": "connect.svg",
+      "tag": "Sitecore Connect"
+    },
+    {
+      "icon": "stream.svg",
+      "tag": "Sitecore Stream"
+    },
+    {
+      "icon": "discover.svg",
+      "tag": "Sitecore Discover"
+    },
+    {
+      "icon": "ordercloud.svg",
+      "tag": "Sitecore OrderCloud"
+    },
+    {
+      "icon": "xc.svg",
+      "tag": "Sitecore XC"
+    },
+    {
+      "icon": "logo.svg",
+      "tag": "Sitecore"
+    }
+  ]
+}

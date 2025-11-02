@@ -2,7 +2,7 @@
 
 !startsub includes
 
-!include https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites/all.puml
+!include https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/heads/master/img/sc10-cloud-archictecture/all.puml
 
 !include <Azure/AzureCommon>
 

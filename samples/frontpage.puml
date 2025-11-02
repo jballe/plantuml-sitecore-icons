@@ -1,5 +1,5 @@
 @startuml
-!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/sprites
+!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/by-type/sc9-architecture
 !includeurl SC_SPRITESPATH/common.puml
 !includeurl SC_SPRITESPATH/scWeb.puml
 

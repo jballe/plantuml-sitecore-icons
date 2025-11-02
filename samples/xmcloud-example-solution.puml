@@ -7,28 +7,27 @@ hide stereotype
 !define XMCLOUD_DETAILS 0
 !includesub xmcloud-architecture.puml!includes
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Container>
 SHOW_PERSON_PORTRAIT()
 
 !define TUPADR https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/refs/tags/v3.0.0/icons
 !define FONTAWESOME TUPADR/font-awesome-5
 !include FONTAWESOME/users.puml
-
-!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/refs/tags/v2.2/dist
-!include AzurePuml/AzureCommon.puml
-'!includeurl AzurePuml/AzureC4Integration.puml
-!include AzurePuml/Networking/AzureFrontDoorService.puml
-!include AzurePuml/General/Azure.puml
-!include AzurePuml/Identity/AzureActiveDirectory.puml
-!include AzurePuml/Identity/AzureActiveDirectoryB2C.puml
-!include AzurePuml/Web/AzureAPIManagement.puml
-!include AzurePuml/Containers/AzureContainerInstance.puml
-!include AzurePuml/Compute/AzureAppService.puml
-
 !include TUPADR/font-awesome/database.puml
 
-!define KubernetesLogo <img:https://raw.githubusercontent.com/octo-technology/kubernetes-icons/master/png/k8s_resources/unlabeled/cronjob.png{scale=.3}>
-!define SitecoreSearchLogo <img:https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/img/sc10-cloud-archictecture/search_64.png>
+!include <azure/AzureCommon>
+'!includeurl AzurePuml/AzureC4Integration.puml
+!include <azure/Networking/AzureFrontDoorService>
+!include <azure/General/Azure>
+!include <azure/Identity/AzureActiveDirectory>
+!include <azure/Identity/AzureActiveDirectoryB2C>
+!include <azure/Web/AzureAPIManagement>
+!include <azure/Containers/AzureContainerInstance>
+!include <azure/Compute/AzureAppService>
+
+
+'!define KubernetesLogo <img:https://raw.githubusercontent.com/octo-technology/kubernetes-icons/master/png/k8s_resources/unlabeled/cronjob.png{scale=.3}>
+'!define SitecoreSearchLogo <img:https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/img/sc10-cloud-archictecture/search_64.png>
 
 !define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.1/sprites
 !includeurl SPRITESURL/github.puml
