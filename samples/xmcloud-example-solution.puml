@@ -5,7 +5,7 @@ hide stereotype
 !define XMCLOUD_DETAILS 1
 !includesub xmcloud-architecture.puml!includes
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include <C4/C4_Container>
 SHOW_PERSON_PORTRAIT()
 
 !define TUPADR https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/refs/tags/v3.0.0/icons
