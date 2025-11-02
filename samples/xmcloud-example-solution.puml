@@ -2,10 +2,10 @@
 title C2: Containers for sample solution
 hide stereotype
 
-!define XMCLOUD_DETAILS 1
+!define XMCLOUD_DETAILS 0
 !includesub xmcloud-architecture.puml!includes
 
-!include <C4/C4_Container>
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 SHOW_PERSON_PORTRAIT()
 
 !define TUPADR https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/refs/tags/v3.0.0/icons

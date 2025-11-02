@@ -27,7 +27,6 @@ AzureEntityColoring(VercelCloud)
 
 !endsub
 
-
 !startsub XM_CLOUD
 
 rectangle "<$vercel>" as vercel {
@@ -45,7 +44,7 @@ rectangle "<$vercel>" as vercel {
 
 }
 
-SITECORE_SEARCH(search, "Search", "Sitecore Search")
+CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
 search .-.> www : Crawling website
 
 rectangle "SitecoreXmCloudLogo\nXM Cloud" as xmcloudlocation {
