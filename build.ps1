@@ -4,14 +4,14 @@ param(
     [string]$Inkscape = "C:\Program Files\Inkscape\bin\inkscape.exe",
     [string]$SourcesFiles = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
     [string]$PngImagesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
-    [string]$SpritesFolder = (Join-Path $PSScriptRoot "img/sc10-cloud-archictecture"),
+    [string]$SpritesFolder = (Join-Path $PSScriptRoot "sprites"),
     [string]$SpriteColor = "SITECORE_COLOR",
     [string]$ThemeName = "Sitecore Cloud",
     [string]$ThemeDescription = "Icons for Sitecore related services",
-    [Switch]$SkipFetchImages=$true,
-    [Switch]$SkipStructurizrTheme=$true,
+    [Switch]$SkipFetchImages,
+    [Switch]$SkipStructurizrTheme,
     [Switch]$SkipSprites,
-    [switch]$SkipAllPuml
+    [Switch]$SkipAllPuml
 )
 
 $ErrorActionPreference = "STOP"
@@ -101,6 +101,7 @@ if (-not $SkipSprites) {
 }
 
 If (-not $SkipAllPuml) {
+    Write-Host "Creating all.puml"
     $allContent = ""
     if(Test-Path (Join-Path $SpritesFolder "common.puml")) {
         $allContent = Get-Content (Join-Path $SpritesFolder "common.puml") -Raw
