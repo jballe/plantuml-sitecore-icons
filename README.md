@@ -13,9 +13,12 @@ Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-ico
 rectangle "SitecoreAI\nSitecoreAiLogo"
 ```
 
-And for more complex diagrams:
+[![SitecoreAI example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/sitecoreai.puml)](./samples/sitecoreai.puml)
 
-[Example](![Diagram example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/xmcloud-architecture.puml))
+
+And more complex diagrams:
+
+[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/xmcloud-architecture.puml)](./samples/xmcloud-architecture.puml)
 
 ## How to use (Sitecore 10 / XM Cloud)
 
@@ -26,6 +29,8 @@ And for more complex diagrams:
 
 SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
 ```
+
+[![Sitecore XM Cloud example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/xmc.puml)](./samples/xmc.puml)
 
 
 ## How to use (Sitecore 9)

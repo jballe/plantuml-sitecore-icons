@@ -1,0 +1,8 @@
+@startuml
+
+!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
+!define SitecoreAiLogo <img:SITECOREURL/ai_64.png>
+
+rectangle "SitecoreAI\nSitecoreAiLogo"
+
+@enduml
