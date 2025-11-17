@@ -4,11 +4,25 @@ I like to make my architecture diagrams in [PlantUML](http://plantuml.com/) and 
 
 Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-icon-font-sprites), I copied the icons from Sitecore documentation and made sprites, so they can easily be used in diagrams.
 
+## How to use (SitecoreAI)
+
+```plantuml
+!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
+!define SitecoreAiLogo <img:SITECOREURL/ai_64.png>
+
+rectangle "SitecoreAI\nSitecoreAiLogo"
+```
+
+And for more complex diagrams:
+
+[Example](![Diagram example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/xmcloud-architecture.puml))
+
 ## How to use (Sitecore 10 / XM Cloud)
 
-```
+```plantuml
 !define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
-!include SITECOREURL/all.puml
+!include SITECOREURL/common.puml
+!include SITECOREURL/xmcloud.puml
 
 SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
 ```
@@ -16,8 +30,8 @@ SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
 
 ## How to use (Sitecore 9)
 
-```
-!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/master/sprites
+```plantuml
+!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/img/sc9-architecture
 !includeurl SC_SPRITESPATH/common.puml
 !includeurl SC_SPRITESPATH/scWeb.puml
 
