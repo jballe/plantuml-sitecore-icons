@@ -66,6 +66,6 @@ sprite $sitecore_contenthub [64x64/16] {
 }
 
 
-!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
+!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 !define SITECORE_CONTENTHUB(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 

@@ -91,7 +91,7 @@ if (-not $SkipSprites) {
         $entity = $name.ToUpperInvariant().Replace(" ", "_")
         
         $stereoType = "Sitecore"
-        $puml_short = "!define ${entity}(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, ${spritename}, ${stereoType})"
+        $puml_short = "!define ${entity}(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, `"`", SITECORE_SYMBOL_COLOR, ${spritename}, ${stereoType})"
         $puml_long = "!define ${entity}(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, ${spritename}, ${stereoType})"
         $content = "${sprite}`n`n${puml_short}`n${puml_long}`n"
         Set-Content -Path (Join-Path $SpritesFolder ("{0}.puml" -f $name.Replace("sitecore_", ""))) -Value $content

@@ -2,14 +2,6 @@
 
 !define TECHN_FONT_SIZE 12
 
-/' Creates an aliased entity with a colorized sprite, label, and stereotype
-Params:
-    e_type:     the entity type (e.g. component, node, agent, etc.)
-    e_color:    the color for the sprite
-    e_sprite:   the sprite for the image representing the entity
-    e_label:    the label to display under the sprite
-    e_alias:    the alias to give the entity
-    e_stereo:   the stereotype, which can define additional styling '/
 !definelong SC_ENTITY(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
 !enddefinelong
@@ -93,7 +85,7 @@ sprite $sitecore_ai [64x64/16] {
 }
 
 
-!define SITECORE_AI(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
+!define SITECORE_AI(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
 !define SITECORE_AI(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
 
 
@@ -241,7 +233,7 @@ sprite $sitecore_connect [64x64/16] {
 }
 
 
-!define SITECORE_CONNECT(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
+!define SITECORE_CONNECT(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
 !define SITECORE_CONNECT(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
 
 
@@ -315,7 +307,7 @@ sprite $sitecore_contenthub [64x64/16] {
 }
 
 
-!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
+!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 !define SITECORE_CONTENTHUB(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 
 
@@ -389,7 +381,7 @@ sprite $sitecore_contenthubone [64x64/16] {
 }
 
 
-!define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
+!define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
 !define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
 
 
@@ -463,7 +455,7 @@ sprite $sitecore_discover [64x64/16] {
 }
 
 
-!define SITECORE_DISCOVER(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
+!define SITECORE_DISCOVER(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
 !define SITECORE_DISCOVER(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
 
 
@@ -537,7 +529,7 @@ ABBBBBBB900000000000000000000000000000000006B62BBBBBBA09BBBBBBB9
 }
 
 
-!define SITECORE_LOGO(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
+!define SITECORE_LOGO(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
 !define SITECORE_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
 
 
@@ -611,7 +603,7 @@ sprite $sitecore_ordercloud [64x64/16] {
 }
 
 
-!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
+!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
 !define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
 
 
@@ -685,7 +677,7 @@ sprite $sitecore_personalize [64x64/16] {
 }
 
 
-!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
+!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
 !define SITECORE_PERSONALIZE(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
 
 
@@ -759,7 +751,7 @@ sprite $sitecore_search [64x64/16] {
 }
 
 
-!define SITECORE_SEARCH(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
+!define SITECORE_SEARCH(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
 !define SITECORE_SEARCH(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
 
 
@@ -833,7 +825,7 @@ sprite $sitecore_send [64x64/16] {
 }
 
 
-!define SITECORE_SEND(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
+!define SITECORE_SEND(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
 !define SITECORE_SEND(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
 
 
@@ -907,7 +899,7 @@ sprite $sitecore_stream [64x64/16] {
 }
 
 
-!define SITECORE_STREAM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
+!define SITECORE_STREAM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
 !define SITECORE_STREAM(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
 
 
@@ -981,7 +973,7 @@ sprite $sitecore_xc [64x64/16] {
 }
 
 
-!define SITECORE_XC(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
+!define SITECORE_XC(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
 !define SITECORE_XC(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
 
 
@@ -1055,7 +1047,7 @@ sprite $sitecore_xm [64x64/16] {
 }
 
 
-!define SITECORE_XM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
+!define SITECORE_XM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
 !define SITECORE_XM(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
 
 
@@ -1129,7 +1121,7 @@ sprite $sitecore_xmcloud [64x64/16] {
 }
 
 
-!define SITECORE_XMCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
+!define SITECORE_XMCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
 !define SITECORE_XMCLOUD(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
 
 
@@ -1203,7 +1195,7 @@ sprite $sitecore_xp [64x64/16] {
 }
 
 
-!define SITECORE_XP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
+!define SITECORE_XP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
 !define SITECORE_XP(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
 
 
