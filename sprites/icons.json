@@ -3,6 +3,10 @@
         "type": "svg"
     },
     "icons": {
+        "ai": {
+            "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-sitecoreai-dark",
+            "tag": "SitecoreAI"
+        },
         "cdp": {
             "src": "https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-cdp-dark",
             "tag": "Sitecore CDP"

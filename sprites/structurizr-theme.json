@@ -1,10 +1,9 @@
 {
   "name": "Sitecore Cloud",
-  "description": "Icons for Sitecore related services",
   "elements": [
     {
       "icon": "ai.svg",
-      "tag": "Sitecore AI"
+      "tag": "SitecoreAI"
     },
     {
       "icon": "cdp.svg",
@@ -66,5 +65,6 @@
       "icon": "logo.svg",
       "tag": "Sitecore"
     }
-  ]
+  ],
+  "description": "Icons for Sitecore related services"
 }
