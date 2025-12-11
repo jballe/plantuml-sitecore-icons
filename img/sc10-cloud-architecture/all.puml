@@ -5,6 +5,9 @@
 !definelong SC_ENTITY(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
 !enddefinelong
+!definelong SC_ENTITY_IMG(e_alias, e_label, e_techn, e_descr, e_img, e_stereo)
+rectangle "==e_label\n<img:e_img>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
+!enddefinelong
 
 skinparam defaultTextAlignment center
 
@@ -88,6 +91,13 @@ sprite $sitecore_ai [64x64/16] {
 !define SITECORE_AI(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
 !define SITECORE_AI(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
 
+
+
+'ailogo.puml
+!define SITECOREAI_LOGO_IMG_URL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites/ai_64.png
+
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn) SC_ENTITY_IMG(e_alias, e_label, e_techn, "", SITECOREAI_LOGO_IMG_URL, Sitecore)
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY_IMG(e_alias, e_label, e_techn, e_descr, SITECOREAI_LOGO_IMG_URL, Sitecore)
 
 
 'cdp.puml
