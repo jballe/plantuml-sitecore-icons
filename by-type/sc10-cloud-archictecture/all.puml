@@ -13,6 +13,9 @@ Params:
 !definelong SC_ENTITY(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
 !enddefinelong
+!definelong SC_ENTITY_IMG(e_alias, e_label, e_techn, e_descr, e_img, e_stereo)
+rectangle "==e_label\n<img:$e_img>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
+!enddefinelong
 
 skinparam defaultTextAlignment center
 
@@ -22,6 +25,87 @@ skinparam component<<Sitecore>> {
     shadowing false
 }
 hide <<Sitecore>> stereotype
+
+
+'ai.puml
+sprite $sitecore_ai [64x64/16] {
+0000000000000000000000017971000000001797100000000000000000000000
+0000000000000000000000089998000000008999800000000000000000000000
+0000000000000025300000299999200000029999920000035200000000000000
+0000000000000199940000199999100000019999910000499910000000000000
+0000000000000399960000069996000000006999600000699930000000000000
+0000000000000199940000003530000000000353000000499910000000000000
+0000000000000025300000000000000000000000000000035200000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000002320000000000232000000000000000000000000
+0000000000002430000000189998100000018999810000000342000000000000
+0000000000069997000000899999800000089999980000008999600000000000
+0001200000399999500003999999930000399999993000059999A30000021000
+003997000059999970000599999995000059999999500007999AA500008A9300
+00799920004999996000049999999400004999999940000699AAA40002AAA700
+0069991000089999100001999999910000199999991000029AAA800001AAA600
+0016730000016762000000399999300000039999930000002686100000486100
+0000000000000000000000025751000000002575100000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000001210000000000121000000000000000000000000
+0000000000003541000000289998200000028999820000001453000000000000
+0010000000189999300002999999920000299999992000039AAA810000000100
+18995000008999999100089999999800008999999A800019AAAAA8000005AA91
+7999920003999999950029999999992002999999AAA2005AAAAAAA30002AAAA8
+999994000499999996003999999999300399999AAAA3006AAAAAAA40005AAAAA
+79999200039999999500299999999920029999AAAAA2005AAAAAAA30003AAAB8
+1899500000899999910008999999980000899AAAAA800019AAAAA9000006AB92
+002100000028999930000399999993000039AAAAA9300004AAAA920000001200
+0000000000004541000000389998300000038AAA930000001564000000000000
+0000000000000000000000002320000000000232000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000003430000000000343000000000000000000000000
+0000000000004541000000399999300000039AAA930000001454000000000000
+00220000001899993000039999999300003AAAAAAA3000039AAA910000002300
+2899600000799999910009999999A900009AAAAAAA900019AAAAB9000007BCB2
+799993000299999994002999999AAA2002AAAAAAAAA2005AAAABBB20003BCCC9
+99999400039999999500399999AAAA3003AAAAAAAAA3006AAABBBB30005CCCCB
+6999920001999999940019999AAAAA2002AAAAAAAAA2004AABBBBB20002CCCC8
+179940000069999980000899AAAAA800008AAAAAAA800009BBBBB8000005CC91
+00000000000799981000029AAAAA92000029AAAAAA2000029BBB800000000100
+000000000000232000000027AAA7200000027AAA820000000242000000000000
+0000000000000000000000001210000000000121000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000026862000000002787200000000000000000000000
+00178400000168720000004AAAAA40000004AAAAA500000039A81000006B9100
+00699910000999992000019AAAAAA100001AAAAABB100002BCCCB10002DDD900
+007999200049999A600004AAAAAAA400005AAAABBB500008CCCCC50003DDDA00
+00299700005999AA700005AAAAAAA500005AAABBBB600009CCCCC600009DC300
+0000100000299AAA500003AAAAAAA300003AABBBBB400006CCCCC30000021000
+000000000005AAA70000008AAAAA80000009BBBBB90000009CCC700000000000
+000000000000242000000017AAA7100000018BBB910000000352000000000000
+0000000000000000000000001310000000000232000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000015300000000000000000000000000000046200000000000000
+000000000000019AA400000046400000000004740000005CDC10000000000000
+00000000000003AAA7000007AAA7000000008BCC8000009DDD50000000000000
+000000000000019AA400001AAAAA20000002BCCCC200006DDD20000000000000
+00000000000000254000002AAAAB20000002CCCCC30000057300000000000000
+000000000000000000000009AAB900000000ACCCB00000000000000000000000
+0000000000000000000000018A820000000029B9200000000000000000000000
+}
+
+
+!define SITECORE_AI(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
+!define SITECORE_AI(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ai, Sitecore)
+
+
+
+'ailogo.puml
+!define SITECOREAI_LOGO_IMG_URL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites/ai_64.png
+
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn) SC_ENTITY_IMG(e_alias, e_label, e_techn, "", SITECOREAI_LOGO_IMG_URL, Sitecore)
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY_IMG(e_alias, e_label, e_techn, e_descr, SITECOREAI_LOGO_IMG_URL, Sitecore)
 
 
 'cdp.puml
@@ -93,7 +177,7 @@ sprite $sitecore_cdp [64x64/16] {
 }
 
 
-!define SITECORE_CDP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_cdp, Sitecore)
+!define SITECORE_CDP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_cdp, Sitecore)
 !define SITECORE_CDP(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_cdp, Sitecore)
 
 
@@ -167,7 +251,7 @@ sprite $sitecore_connect [64x64/16] {
 }
 
 
-!define SITECORE_CONNECT(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
+!define SITECORE_CONNECT(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
 !define SITECORE_CONNECT(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_connect, Sitecore)
 
 
@@ -241,7 +325,7 @@ sprite $sitecore_contenthub [64x64/16] {
 }
 
 
-!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
+!define SITECORE_CONTENTHUB(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 !define SITECORE_CONTENTHUB(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_contenthub, Sitecore)
 
 
@@ -315,7 +399,7 @@ sprite $sitecore_contenthubone [64x64/16] {
 }
 
 
-!define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
+!define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
 !define SITECORE_CONTENTHUBONE(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_contenthubone, Sitecore)
 
 
@@ -389,7 +473,7 @@ sprite $sitecore_discover [64x64/16] {
 }
 
 
-!define SITECORE_DISCOVER(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
+!define SITECORE_DISCOVER(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
 !define SITECORE_DISCOVER(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_discover, Sitecore)
 
 
@@ -463,7 +547,7 @@ ABBBBBBB900000000000000000000000000000000006B62BBBBBBA09BBBBBBB9
 }
 
 
-!define SITECORE_LOGO(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
+!define SITECORE_LOGO(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
 !define SITECORE_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_logo, Sitecore)
 
 
@@ -537,7 +621,7 @@ sprite $sitecore_ordercloud [64x64/16] {
 }
 
 
-!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
+!define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
 !define SITECORE_ORDERCLOUD(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_ordercloud, Sitecore)
 
 
@@ -611,7 +695,7 @@ sprite $sitecore_personalize [64x64/16] {
 }
 
 
-!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
+!define SITECORE_PERSONALIZE(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
 !define SITECORE_PERSONALIZE(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_personalize, Sitecore)
 
 
@@ -685,7 +769,7 @@ sprite $sitecore_search [64x64/16] {
 }
 
 
-!define SITECORE_SEARCH(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
+!define SITECORE_SEARCH(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
 !define SITECORE_SEARCH(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_search, Sitecore)
 
 
@@ -759,7 +843,7 @@ sprite $sitecore_send [64x64/16] {
 }
 
 
-!define SITECORE_SEND(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
+!define SITECORE_SEND(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
 !define SITECORE_SEND(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_send, Sitecore)
 
 
@@ -833,7 +917,7 @@ sprite $sitecore_stream [64x64/16] {
 }
 
 
-!define SITECORE_STREAM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
+!define SITECORE_STREAM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
 !define SITECORE_STREAM(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_stream, Sitecore)
 
 
@@ -907,7 +991,7 @@ sprite $sitecore_xc [64x64/16] {
 }
 
 
-!define SITECORE_XC(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
+!define SITECORE_XC(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
 !define SITECORE_XC(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xc, Sitecore)
 
 
@@ -981,7 +1065,7 @@ sprite $sitecore_xm [64x64/16] {
 }
 
 
-!define SITECORE_XM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
+!define SITECORE_XM(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
 !define SITECORE_XM(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xm, Sitecore)
 
 
@@ -989,19 +1073,17 @@ sprite $sitecore_xm [64x64/16] {
 'xmcloud-architecture.puml
 @startuml xmcloud
 
-skinparam monochrome false
-
 !startsub includes
 
-'!define SITECOREBASE https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v0.9/img
-!define SITECOREBASE https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/heads/master/img
-!define SITECOREURL SITECOREBASE/sc10-cloud-archictecture
-!includeurl SITECOREURL/all.puml
-'!include all.puml
+!include https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/heads/master/img/sc10-cloud-archictecture/all.puml
 
-!define SitecoreXmCloudLogo <img:SITECOREURL/xmcloud_64.png>
-!define SitecoreLogo <img:SITECOREURL/sitecore_64.png>
-!define SitecoreSearchLogo <img:SITECOREURL/search_64.png>
+!include <Azure/AzureCommon>
+
+AzureEntityColoring(CustomEntity)
+AzureEntityColoring(SitecoreCloud)
+AzureEntityColoring(VercelCloud)
+!define CustomEntity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo) rectangle "==e_label\n<color:e_color>e_sprite</color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
+!define CustomEntity(e_alias, e_label, e_techn, e_sprite) CustomEntity(e_alias, e_label, e_techn, AZURE_SYMBOL_COLOR, e_sprite, CustomEntity)
 
 !define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.1/sprites
 !includeurl SPRITESURL/vercel.puml
@@ -1011,16 +1093,8 @@ skinparam monochrome false
 !includeurl SPRITESURL/github-icon.puml
 !includeurl SPRITESURL/graphql.puml
 
-!define CustomEntity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo) rectangle "==e_label\n<color:e_color>e_sprite</color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
-!define CustomEntity(e_alias, e_label, e_techn, e_sprite) CustomEntity(e_alias, e_label, e_techn, AZURE_SYMBOL_COLOR, e_sprite, CustomEntity)
-
-' !include <Azure/AzureCommon>
-' AzureEntityColoring(CustomEntity)
-' AzureEntityColoring(SitecoreCloud)
-' AzureEntityColoring(VercelCloud)
-
-
 !endsub
+
 
 !startsub XM_CLOUD
 
@@ -1039,22 +1113,18 @@ www --> compute
 
 }
 
-CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
+SITECORE_SEARCH(search, "Search", "Sitecore Search")
 search .-.> www : Crawling website
 
 rectangle "SitecoreXmCloudLogo\nXM Cloud" as xmcloudlocation {
 
-CustomEntity(sitecoreportal, "Sitecore Portal", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreLogo, SitecoreCloud)
-SITECORE_XMCLOUD(xmcloud_pages, "XM Cloud Pages", "component", SITECORE_COLOR)
-'rectangle "==XM Cloud Pages\n<color:SITECORE_COLOR>$xmcloud</color>" as sc
-
-'CustomEntity(xmcloud_pages, "XM Cloud Pages", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_explorer, "XM Cloud Explorer", "Sitecore App", SITECORE_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_editor, "XM Cloud Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-' CustomEntity(xmcloud_forms, "XM Cloud Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+SITECORE_LOGO(sitecoreportal, "Sitecore Portal", "Sitecore App")
+SITECORE_XMCLOUD(xmcloud_pages, "XM Cloud Pages", "Sitecore App")
+SITECORE_XMCLOUD(xmcloud_explorer, "XM Cloud Explorer", "Sitecore App")
+SITECORE_XMCLOUD(xmcloud_editor, "XM Cloud Content Editor", "Sitecore App")
 CustomEntity(xmcloud, "XM Cloud Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
-CustomEntity(xmcloud_storage, "XM Cloud/CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
-CustomEntity(xmcloud_pipeline, "XM Cloud Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
+SITECORE_XMCLOUD(xmcloud_storage, "XM Cloud/CM", "Sitecore Data Storage")
+SITECORE_LOGO(xmcloud_pipeline, "XM Cloud Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreXmCloudLogo, SitecoreCloud)
 CustomEntity(xmcloud_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
 rectangle "<$github-icon>\nGitHub app" as xmcloud_githubapp<<SitecoreCloud>>
 
@@ -1151,7 +1221,7 @@ sprite $sitecore_xmcloud [64x64/16] {
 }
 
 
-!define SITECORE_XMCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
+!define SITECORE_XMCLOUD(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
 !define SITECORE_XMCLOUD(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xmcloud, Sitecore)
 
 
@@ -1225,7 +1295,7 @@ sprite $sitecore_xp [64x64/16] {
 }
 
 
-!define SITECORE_XP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
+!define SITECORE_XP(e_alias, e_label, e_techn) SC_ENTITY(e_alias, e_label, e_techn, "", SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
 !define SITECORE_XP(e_alias, e_label, e_techn, e_descr) SC_ENTITY(e_alias, e_label, e_techn, e_descr, SITECORE_SYMBOL_COLOR, sitecore_xp, Sitecore)
 
 

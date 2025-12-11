@@ -90,6 +90,13 @@ sprite $sitecore_ai [64x64/16] {
 
 
 
+'ailogo.puml
+!define SITECOREAI_LOGO_IMG_URL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites/ai_64.png
+
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn) SC_ENTITY_IMG(e_alias, e_label, e_techn, "", SITECOREAI_LOGO_IMG_URL, Sitecore)
+!define SITECORE_AI_LOGO(e_alias, e_label, e_techn, e_descr) SC_ENTITY_IMG(e_alias, e_label, e_techn, e_descr, SITECOREAI_LOGO_IMG_URL, Sitecore)
+
+
 'cdp.puml
 sprite $sitecore_cdp [64x64/16] {
 0000000000000000000000000000000000000000000000000000000000000000
