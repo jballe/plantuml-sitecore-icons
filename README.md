@@ -4,6 +4,8 @@ I like to make my architecture diagrams in [PlantUML](http://plantuml.com/) and 
 
 Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-icon-font-sprites), I copied the icons from Sitecore documentation and made sprites, so they can easily be used in diagrams.
 
+All rights remain at [Sitecore](https://www.sitecore.com/), but I am pretty sure that we can use the icons for creating better solutions.
+
 ## How to use (SitecoreAI)
 
 As the SitecoreAI logo is multi-colored, there is another procedure to use the image
@@ -50,6 +52,6 @@ Will give you
 
 [![sc9_simple.puml](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/heads/master/samples/sc9_simple.puml)](./samples/sc9_simple.puml)
 
-You can embed diagrams from public sources by using plantuml as above. For private repos I often generate an image url with the source embedded, like when using [PlantText.com](https://www.planttext.com/?text=TOx12e9054NtWlzWhWhIsRUgHAX582cu2M8SNpenyvHvR-Ztcx1LqEvoEPnxzyJIiRScZbOzF3H2KXVtkhgUcxAk3iqf6PbdsWdXv2iVD8--ymHEJSY0dAl9YcSdZG4n6uaVKqQQGKqECXqe4bOIWnCqkz1JsD6eZE_1E_Ep9OBDJfZFov__7AaMkYyMHtNHbiUrijiaBPPRDxn8b0FOaDDD7Eq1-m2_0G00)
+You can embed diagrams from public sources by using plantuml as above. For private repos I often generate an image url with the source embedded, like when using [PlantText.com](https://www.planttext.com/?text=VSwn2i8m58NXNUWxr4uADbS51zsq57GGYXLS14dJQnj9qfBSABwz4PqStCxmmVc7DLwbmRZCBcLns1tpibWVjt5BrBiLWEKFraXgVUKTMj4PGaDCT1fk5LSAeLVSaDSgTP9GT1PJ6PG3YrS7n1i7z_bqlc0pg9ufFNi49vOfjw9zU_8Mey5G6g5yZTwgdmu8Jxeph0yFVvqJ9wo-B1gKsIdVZ8IUn4dsIJwRFJUyGHrsCdu1)
 
 I can also recommend the [VS Code extension for PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
