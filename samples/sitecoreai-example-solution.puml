@@ -2,8 +2,8 @@
 title C2: Containers for sample solution
 hide stereotype
 
-!define SITECOREAI_DETAILS 1
-!includesub xmcloud-architecture.puml!includes
+!define SITECOREAI_DETAILS 0
+!includesub sitecoreai-architecture.puml!includes
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 SHOW_PERSON_PORTRAIT()
@@ -55,13 +55,13 @@ cloud "Microsoft Azure, Subscription 1" as microsoft <<location>> {
     apimgm --> pim
 }
 
-cloud "SitecoreLogo\nSitecore SaaS Solutions" as sitecore <<location>> {
-    CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
+cloud "<color:SITECORE_SYMBOL_COLOR><$sitecore_logo></color>\nSitecore SaaS Solutions" as sitecore <<location>> {
 
     !if SITECOREAI_DETAILS == "1"
-    !includesub xmcloud-architecture.puml!XM_CLOUD
+    !includesub sitecoreai-architecture.puml!XM_CLOUD
     !else
-    CustomEntity(sitecoreai, "SitecoreAI", "SitecoreAI Cloud", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    SITECORE_SEARCH(search, "Search", "Sitecore Search")
+    SITECORE_AI_LOGO(sitecoreai, "SitecoreAI", "SitecoreAI Cloud")
     CustomEntity(www, "my-website.com", "Vercel website", black, "<size:60><U+25B2>", VercelCloud)
     !endif
 }

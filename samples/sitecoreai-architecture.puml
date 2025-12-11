@@ -4,17 +4,14 @@
 
 !define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
 !include AzurePuml/AzureCommon.puml
-
 AzureEntityColoring(CustomEntity)
-AzureEntityColoring(SitecoreCloud)
+AzureEntityColoring(Sitecore)
 AzureEntityColoring(VercelCloud)
 !define CustomEntity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo) rectangle "==e_label\n<color:e_color>e_sprite</color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
 !define CustomEntity(e_alias, e_label, e_techn, e_sprite) CustomEntity(e_alias, e_label, e_techn, AZURE_SYMBOL_COLOR, e_sprite, CustomEntity)
 
-!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/sprites
-!define SitecoreAiLogo <img:SITECOREURL/ai_64.png>
-!define SitecoreLogo <img:SITECOREURL/logo_64.png>
-!define SitecoreSearchLogo <img:SITECOREURL/search_64.png>
+!define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025.1/sprites
+!includeurl SITECOREURL/all.puml
 
 !define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.1/sprites
 !include SPRITESURL/vercel.puml
@@ -35,7 +32,7 @@ rectangle "<$vercel>" as vercel {
         CustomEntity(compute, "Compute\n", "Vercel compute", black, "<$nextjs>", VercelCloud)
     }
     CustomEntity(vercel_build, "Deploy", "Vercel pipeline", black, "<size:60><U+25B2>", VercelCloud)
-    rectangle "<$github-icon>\nGitHub app" as vercel_githubapp<<VercelCloud>>
+    CustomEntity(vercel_githubapp, "GitHub app", "SaaS", black, "<$github-icon>", VercelCloud)
 
     vercel_githubapp -.up-> vercel_build : trigger
     vercel_build -.up-> www : Static site generation
@@ -44,20 +41,20 @@ rectangle "<$vercel>" as vercel {
 
 }
 
-CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
+SITECORE_SEARCH(search, "Search", "Sitecore Search")
 search .-.> www : Crawling website
 
 rectangle "SitecoreAiLogo\nSitecoreAI" as sitecoreailocation {
 
-    CustomEntity(sitecoreportal, "Sitecore Portal", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai_pages, "Pages Builder", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai_editor, "Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai_forms, "Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai, "Experience Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
-    CustomEntity(sitecoreai_storage, "CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai_pipeline, "SitecoreAI Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(sitecoreai_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
-    rectangle "<$github-icon>\nGitHub app" as sitecoreai_githubapp<<SitecoreCloud>>
+    SITECORE_AI_LOGO(sitecoreportal, "Sitecore Portal", "Sitecore App", "Starting point for all editors")
+    SITECORE_AI_LOGO(sitecoreai_pages, "Pages Builder", "Sitecore App", "Edit pages and content")
+    SITECORE_AI_LOGO(sitecoreai_editor, "Content Editor", "Sitecore App", "Old editor for all content")
+    SITECORE_AI_LOGO(sitecoreai_forms, "Forms", "Sitecore App", "Edit and publish forms")
+    SITECORE_AI_LOGO(sitecoreai, "Experience Edge", "GraphQL/Layout service", "Content ready at edge")
+    SITECORE_AI_LOGO(sitecoreai_storage, "CM", "Sitecore Data Storage", "Sitecore managed CM instance with database etc.")
+    SITECORE_AI_LOGO(sitecoreai_pipeline, "SitecoreAI Deploy", "Sitecore Pipeline", "Manages deploy of editing host and CM, and automatic upgrades")
+    CustomEntity(sitecoreai_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", Sitecore)
+    CustomEntity(sitecoreai_githubapp, "GitHub app", "SaaS", "black", "<$github-icon>", Sitecore)
 
     sitecoreportal -.-> sitecoreai_pages
     sitecoreportal -.-> sitecoreai_editor
@@ -81,7 +78,7 @@ rectangle "SitecoreAiLogo\nSitecoreAI" as sitecoreailocation {
 
 !endsub
 
-CustomEntity(app, "App", "Sitecore Marketplace", AZURE_SYMBOL_COLOR, SitecoreLogo, VercelCloud)
+SITECORE_LOGO(app, "App", "Sitecore Marketplace", "Custom app with specific functionality")
 sitecoreai_pages -.up-> app
 sitecoreportal -.up-> app
 app ---> sitecoreai_editinghost

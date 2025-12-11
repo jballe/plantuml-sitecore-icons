@@ -6,11 +6,14 @@ Inspired by [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-ico
 
 ## How to use (SitecoreAI)
 
+As the SitecoreAI logo is multi-colored, there is another procedure to use the image
+
 ```plantuml
 !define SITECOREURL https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025.1/sprites
-!define SitecoreAiLogo <img:SITECOREURL/ai_64.png>
+!include SITECOREURL/common.puml
+!include SITECOREURL/ailogo.puml
 
-rectangle "SitecoreAI\nSitecoreAiLogo"
+SITECORE_AI_LOGO(ai, "SitecoreAI", "SaaS")
 ```
 
 [![SitecoreAI example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025.1/samples/sitecoreai.puml)](./samples/sitecoreai.puml)
@@ -18,7 +21,7 @@ rectangle "SitecoreAI\nSitecoreAiLogo"
 
 And more complex diagrams:
 
-[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/sitecoreai-architecture.puml)](./samples/xmcloud-architecture.puml)
+[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/heads/master/samples/sitecoreai-architecture.puml)](./samples/sitecoreai-architecture.puml)
 
 ## How to use (Sitecore 10 / XM Cloud)
 
@@ -30,7 +33,7 @@ And more complex diagrams:
 SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
 ```
 
-[![Sitecore XM Cloud example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025.1/samples/xmc.puml)](./samples/xmc.puml)
+[![Sitecore XM Cloud example](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/heads/master/samples/xmc.puml)](./samples/xmc.puml)
 
 
 ## How to use (Sitecore 9)
@@ -45,7 +48,7 @@ SCWEB(cm, "Content\nManagement")
 
 Will give you
 
-![frontpage.puml](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025.1/samples/frontpage.puml)
+[![sc9_simple.puml](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/heads/master/samples/sc9_simple.puml)](./samples/sc9_simple.puml)
 
 You can embed diagrams from public sources by using plantuml as above. For private repos I often generate an image url with the source embedded, like when using [PlantText.com](https://www.planttext.com/?text=TOx12e9054NtWlzWhWhIsRUgHAX582cu2M8SNpenyvHvR-Ztcx1LqEvoEPnxzyJIiRScZbOzF3H2KXVtkhgUcxAk3iqf6PbdsWdXv2iVD8--ymHEJSY0dAl9YcSdZG4n6uaVKqQQGKqECXqe4bOIWnCqkz1JsD6eZE_1E_Ep9OBDJfZFov__7AaMkYyMHtNHbiUrijiaBPPRDxn8b0FOaDDD7Eq1-m2_0G00)
 
