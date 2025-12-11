@@ -18,7 +18,7 @@ rectangle "SitecoreAI\nSitecoreAiLogo"
 
 And more complex diagrams:
 
-[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/xmcloud-architecture.puml)](./samples/xmcloud-architecture.puml)
+[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/jballe/plantuml-sitecore-icons/tags/v2025/samples/sitecoreai-architecture.puml)](./samples/xmcloud-architecture.puml)
 
 ## How to use (Sitecore 10 / XM Cloud)
 

@@ -47,45 +47,45 @@ rectangle "<$vercel>" as vercel {
 CustomEntity(search, "Search", "Sitecore Search", AZURE_SYMBOL_COLOR, SitecoreSearchLogo, SitecoreCloud)
 search .-.> www : Crawling website
 
-rectangle "SitecoreAiLogo\nSitecoreAI" as xmcloudlocation {
+rectangle "SitecoreAiLogo\nSitecoreAI" as sitecoreailocation {
 
     CustomEntity(sitecoreportal, "Sitecore Portal", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud_pages, "Pages Builder", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud_editor, "Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud_forms, "Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud, "Experience Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
-    CustomEntity(xmcloud_storage, "CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud_pipeline, "SitecoreAI Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
-    CustomEntity(xmcloud_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
-    rectangle "<$github-icon>\nGitHub app" as xmcloud_githubapp<<SitecoreCloud>>
+    CustomEntity(sitecoreai_pages, "Pages Builder", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    CustomEntity(sitecoreai_editor, "Content Editor", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    CustomEntity(sitecoreai_forms, "Forms", "Sitecore App", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    CustomEntity(sitecoreai, "Experience Edge", "GraphQL/Layout service", AZURE_SYMBOL_COLOR, <$graphql>, SitecoreCloud)
+    CustomEntity(sitecoreai_storage, "CM", "Sitecore Data Storage", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    CustomEntity(sitecoreai_pipeline, "SitecoreAI Deploy", "Sitecore Pipeline", AZURE_SYMBOL_COLOR, SitecoreAiLogo, SitecoreCloud)
+    CustomEntity(sitecoreai_editinghost, "Editing Host\n", "Custom website", "black", "<$nextjs>", SitecoreCloud)
+    rectangle "<$github-icon>\nGitHub app" as sitecoreai_githubapp<<SitecoreCloud>>
 
-    sitecoreportal -.-> xmcloud_pages
-    sitecoreportal -.-> xmcloud_editor
-    sitecoreportal -.-> xmcloud_forms
+    sitecoreportal -.-> sitecoreai_pages
+    sitecoreportal -.-> sitecoreai_editor
+    sitecoreportal -.-> sitecoreai_forms
 
-    xmcloud_pages -.-.-> xmcloud_editinghost
-    xmcloud_pages --> xmcloud_storage
-    xmcloud_editor --> xmcloud_storage
-    xmcloud_forms --> xmcloud_storage
-    xmcloud_editinghost -up-> xmcloud
+    sitecoreai_pages -.-.->      sitecoreai_editinghost
+    sitecoreai_pages -->         sitecoreai_storage
+    sitecoreai_editor -->        sitecoreai_storage
+    sitecoreai_forms -->         sitecoreai_storage
+    sitecoreai_editinghost -up-> sitecoreai
 
-    xmcloud_storage -up.-> xmcloud : publish content
-    compute ---> xmcloud : api
+    sitecoreai_storage -up.-> sitecoreai : publish content
+    compute ---> sitecoreai : api
 
-    xmcloud_pipeline -up.-> xmcloud_editor : deploy
-    xmcloud_pipeline -up.-> xmcloud_editinghost : deploy
+    sitecoreai_pipeline -up.-> sitecoreai_editor : deploy
+    sitecoreai_pipeline -up.-> sitecoreai_editinghost : deploy
 
-    xmcloud_githubapp -up.-> xmcloud_pipeline : trigger
+    sitecoreai_githubapp -up.-> sitecoreai_pipeline : trigger
 
 }
 
 !endsub
 
 CustomEntity(app, "App", "Sitecore Marketplace", AZURE_SYMBOL_COLOR, SitecoreLogo, VercelCloud)
-xmcloud_pages -.up-> app
+sitecoreai_pages -.up-> app
 sitecoreportal -.up-> app
-app ---> xmcloud_editinghost
-app --> xmcloud
+app ---> sitecoreai_editinghost
+app --> sitecoreai
 
 sitecoreportal -[hidden]right-> vercel
 
