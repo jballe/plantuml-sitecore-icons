@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "jebbs.plantuml",
-        "ms-vscode.powershell"
+        "ms-vscode.powershell",
+        "systemticks.c4-dsl-extension"
     ]
 }

@@ -55,3 +55,16 @@ Will give you
 You can embed diagrams from public sources by using plantuml as above. For private repos I often generate an image url with the source embedded, like when using [PlantText.com](https://www.planttext.com/?text=VSwn2i8m58NXNUWxr4uADbS51zsq57GGYXLS14dJQnj9qfBSABwz4PqStCxmmVc7DLwbmRZCBcLns1tpibWVjt5BrBiLWEKFraXgVUKTMj4PGaDCT1fk5LSAeLVSaDSgTP9GT1PJ6PG3YrS7n1i7z_bqlc0pg9ufFNi49vOfjw9zU_8Mey5G6g5yZTwgdmu8Jxeph0yFVvqJ9wo-B1gKsIdVZ8IUn4dsIJwRFJUyGHrsCdu1)
 
 I can also recommend the [VS Code extension for PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+
+
+# Structurizr
+
+Another approach for text based diagrams is [Structurizr](https://docs.structurizr.com/)
+
+Based on the icons here, there is also a theme for using those in Structurizr by including 
+
+```text
+theme "https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025.1/sprites/structurizr-theme.json"
+```
+
+Take a look at the [Structurizr example](./samples/structurizr)
