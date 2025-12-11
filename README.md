@@ -21,7 +21,7 @@ SITECORE_AI_LOGO(ai, "SitecoreAI", "SaaS")
 
 And more complex diagrams:
 
-[![Diagram example of SitecoreAI architecture](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/heads/master/samples/sitecoreai-architecture.puml)](./samples/sitecoreai-architecture.puml)
+[![Diagram example of SitecoreAI architecture](./samples/sitecoreai-architecture/sitecoreai-architecture.png)](./samples/sitecoreai-architecture.puml)
 
 ## How to use (Sitecore 10 / XM Cloud)
 

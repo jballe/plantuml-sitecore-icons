@@ -1,4 +1,4 @@
-@startuml xmcloud
+@startuml sitecoreai-architecture
 
 !startsub includes
 
@@ -44,7 +44,7 @@ rectangle "<$vercel>" as vercel {
 SITECORE_SEARCH(search, "Search", "Sitecore Search")
 search .-.> www : Crawling website
 
-rectangle "SitecoreAiLogo\nSitecoreAI" as sitecoreailocation {
+rectangle "<img:SITECOREAI_LOGO_IMG_URL>\nSitecoreAI" as sitecoreailocation {
 
     SITECORE_AI_LOGO(sitecoreportal, "Sitecore Portal", "Sitecore App", "Starting point for all editors")
     SITECORE_AI_LOGO(sitecoreai_pages, "Pages Builder", "Sitecore App", "Edit pages and content")
