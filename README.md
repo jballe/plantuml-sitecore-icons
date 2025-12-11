@@ -36,7 +36,7 @@ SITECORE_XMCLOUD(xmc, "XM Cloud", "SaaS")
 ## How to use (Sitecore 9)
 
 ```plantuml
-!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/img/sc9-architecture
+!define SC_SPRITESPATH https://raw.githubusercontent.com/jballe/plantuml-sitecore-icons/refs/tags/v2025/by-type/sc9-architecture
 !includeurl SC_SPRITESPATH/common.puml
 !includeurl SC_SPRITESPATH/scWeb.puml
 
